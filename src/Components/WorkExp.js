@@ -2,7 +2,6 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import data from '../Data/data'
 import FadeIn from './FramerMotion/FadeIn';
-import { motion } from 'framer-motion';
 
 const WorkExp = () => {
     return (
@@ -35,7 +34,9 @@ const WorkExp = () => {
                                             {element.subtitle}
                                         </h4>
                                         <ul className="vertical-timeline-element-discription">
-                                            {element.discriptions.map(discription=>{return <li>{discription}</li>})}
+                                            {element.discriptions.map(discription=>{
+                                                return <li key={ element.discriptions.indexOf(discription) }> {discription} </li>
+                                            })}
                                         </ul>
                                     </VerticalTimelineElement>
                                 )

@@ -8,7 +8,7 @@ import Footer from '../Components/Footer';
 import WorkExp from '../Components/WorkExp';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import { useCallback, useRef } from "react";
+import { useCallback } from "react";
 
 const Homepage = () => {
     const particlesInit = useCallback(async engine => {
@@ -112,7 +112,6 @@ const Homepage = () => {
             <Project />
             <Contact />
             <Footer />
-            
         </div>
     );
 }
