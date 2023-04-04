@@ -313,6 +313,33 @@ h2{
   -webkit-transform: rotate(-45deg); 
 }
 
+.project-card:hover .learn-more-text{
+  font-weight: 400;
+  text-decoration: underline;
+  animation: learnMoreAnimation 1.5s infinite;
+}
+
+.project-card:hover .learn-more-arrow{
+  animation: learnMoreAnimation 1.5s infinite;
+}
+
+@keyframes learnMoreAnimation {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.backdrop {
+  position: relative;
+  z-index: 99;
+}
+
 .modal{
   display: block;
   overflow-y: auto;

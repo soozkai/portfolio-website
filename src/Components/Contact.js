@@ -19,8 +19,8 @@ const Contact = () => {
                     <div className="write-email">
                         <p className='contact-text'>Write me an email</p>
                         <div className="email">
-                            <a href="mailto:changherng.jc@gmail.com">
-                                <RiMailLine style={iconStyle}/>
+                            <a href="mailto:changherng.jc@gmail.com" >
+                                <RiMailLine style={iconStyle} />
                             </a>
                         </div>
                         

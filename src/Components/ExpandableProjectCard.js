@@ -1,9 +1,18 @@
-import { motion } from "framer-motion";
+import { motion, transform } from "framer-motion";
 import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 
 const ExpandableProjectCard = ({ project }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isHover, setIsHover] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHover(true);
+    };
+    const handleMouseLeave = () => {
+        setIsHover(false);
+    };
+
     const handleClick = (e)=>{
         if(e.target.id === 'close' || e.target.className==="backdrop"){
             setIsOpen(false)
@@ -11,8 +20,41 @@ const ExpandableProjectCard = ({ project }) => {
         }else{
             setIsOpen(true)
             document.body.style.overflow = 'hidden';
-            document.getElementById('projects').scrollIntoView({block:"end"});
         }
+    }
+    const cardTextParentVariants = {
+        hidden:{},
+        show:{
+            transition:{
+                staggerChildren: 0.1,
+                delayChildren: 0.1
+            }
+        },
+    }
+
+    const cardTextChildrenVariants = {
+        hidden: { opacity: 0, x: 80 },
+        show: { opacity: 1, x: 0 },
+    }
+
+    const modalTextParentVariants = {
+        hidden:{},
+        show:{
+            transition:{
+                staggerChildren: 0.1,
+            }
+        }
+    }
+
+    const modalTextChildrenVariants = {
+        hidden: { opacity: 0, y: 10 },
+        show: { 
+            opacity: 1, 
+            y: 0, 
+            transition:{
+                type: "tween"
+            }
+        },
     }
 
     return (
@@ -21,89 +63,117 @@ const ExpandableProjectCard = ({ project }) => {
             onClick={(e)=>handleClick(e)}
             style={isOpen && {
                 zIndex: 1000,
-                position:"absolute",
+                position:"fixed",
+                top: '0',
+                right: '0',
+                bottom: '0',
+                left: '0',
                 width: '100%',
-                height:'110%',
+                height:'100%',
                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 display: 'flex',
+                alignItems: 'center'
             }}
         >
             <motion.div
-            className="expandable-cards" 
-            layout
-            style={isOpen && {
-                width: '80%',
-                maxWidth: '1200px',
-                height:'75%',
-                overflow: 'auto',
-                padding:'0',
-                margin:'auto',
-                marginTop:'10vh',
-                background:'white',
-                overflow: 'hidden',
-                borderRadius: '10px'
-            }}
+                className="expandable-cards" 
+                style={isOpen && {
+                    width: '80%',
+                    maxWidth: '1200px',
+                    height:'80%',
+                    overflow: 'auto',
+                    padding:'0',
+                    margin:'auto',
+                    background:'white',
+                    overflow: 'hidden',
+                    borderRadius: '10px'
+                }}
+                layout
+                transition={{ duration: 1, type: 'spring'  }}
             >
                 {isOpen ?
-                <div className='modal'>
-                    <div className="modal-topbar">
-                        <IoIosArrowBack id="close" style={{fontSize:'25px'}} />
+                    <motion.div className= 'modal'>
+                        <motion.div
+                            initial = {{ opacity: 0 }}
+                            animate = {{ opacity: 1 }}
+                            transition={{ duration: 0.1, delay: 0.5}}
+                        >
+                            <div className="modal-topbar">
+                                <IoIosArrowBack id="close" style={{ fontSize:'25px', cursor: "pointer" }} />
+                            </div>
+                            <div className="modal-media">
+                                {project.images.map(item=> {
+                                    return (
+                                        <img className='images' src={item} alt="" key={project.images.indexOf(item)} />
+                                    )
+                                })}
+                            </div>
+                            <motion.div className="modal-text" variants={modalTextParentVariants} initial='hidden' animate='show'>
+                                <motion.h1 variants={modalTextChildrenVariants}>{project.name}</motion.h1>
+                                <motion.hr variants={modalTextChildrenVariants}/>
+                                <motion.h2 variants={modalTextChildrenVariants}>Overview</motion.h2>
+                                <motion.p variants={modalTextChildrenVariants}>{project.overview}</motion.p>
+                                <motion.h2 variants={modalTextChildrenVariants}>Technology Choice</motion.h2>
+                                <motion.p variants={modalTextChildrenVariants}>{project.techStack}</motion.p>
+                                <motion.h2 variants={modalTextChildrenVariants}>Goals</motion.h2>
+                                <motion.dl className='modal-lists' variants={modalTextChildrenVariants}>
+                                    {project.goals.map(htmlListItemGenerator)}
+                                </motion.dl>
+                                <motion.h2 variants={modalTextChildrenVariants}>Process</motion.h2>
+                                <motion.ol className='modal-lists' variants={modalTextChildrenVariants}>
+                                    {project.process.map(htmlListItemGenerator)}
+                                </motion.ol>
+                                <motion.h2 variants={modalTextChildrenVariants}>Results</motion.h2>
+                                <motion.p variants={modalTextChildrenVariants}>{project.results}</motion.p>
+                                <motion.h2 variants={modalTextChildrenVariants}>Challanges</motion.h2>
+                                <motion.dl className='modal-lists' variants={modalTextChildrenVariants}>
+                                    {project.challanges.map(htmlListItemGenerator)}
+                                </motion.dl>
+                                <motion.h2 variants={modalTextChildrenVariants}>Takeaways</motion.h2>
+                                <motion.dl className='modal-lists' variants={modalTextChildrenVariants}>
+                                    {project.takeaways.map(htmlListItemGenerator)}
+                                </motion.dl>
+                                <motion.h2 variants={modalTextChildrenVariants}>Source Code</motion.h2>
+                                <motion.span variants={modalTextChildrenVariants}>Github link: </motion.span>
+                                <motion.a href={project.github} variants={modalTextChildrenVariants}>{project.github}</motion.a>
+                            </motion.div>
+                        </motion.div>
+                    </motion.div> 
+                    :
+                    <div>
+                        <motion.div 
+                            className="project-card"
+                            initial = {{ opacity: 0 }}
+                            animate = {{ opacity: 1 }}
+                            transition = {{ duration: 0.2 }}
+                            whileHover = {{ scale: 1.1, y: -10 }}
+                            whileTap={{ scale: 0.8 }}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="project-card-image">
+                                <img className='images' src={project.thumbnail} alt="" />
+                            </div>
+                            <motion.div 
+                                className="project-card-text"
+                                initial = 'hidden'
+                                animate = 'show'
+                                variants={cardTextParentVariants}
+                            >
+                                <motion.div variants={cardTextParentVariants}>
+                                    <motion.h3 className='project-name' variants={cardTextChildrenVariants}>{project.name}</motion.h3>
+                                    <motion.p className='project-discription' variants={cardTextChildrenVariants}>{project.discription}</motion.p>
+                                </motion.div>
+                                <motion.div variants={cardTextParentVariants}>
+                                    <motion.p className='project-tech-stack' variants={cardTextChildrenVariants}>Technology: {project.techStack}</motion.p>
+                                    <motion.span className='learn-more' variants={cardTextChildrenVariants} >
+                                        <span className='learn-more-text'> Learn more about the project </span>
+                                        <span className='learn-more-arrow'></span>
+                                    </motion.span>
+                                </motion.div>
+                            </motion.div>
+                        </motion.div>
                     </div>
-                    <div className="modal-media">
-                        {project.images.map(item=> {
-                            return (
-                                <img className='images' src={item} alt="" key={project.images.indexOf(item)} />
-                            )
-                        })}
-                    </div>
-                    <div className="modal-text">
-                        <h1>{project.name}</h1>
-                        <hr />
-                        <h2>Overview</h2>
-                        <p>{project.overview}</p>
-                        <h2>Technology Choice</h2>
-                        <p className=''>{project.techStack}</p>
-                        <h2>Goals</h2>
-                        <dl className='modal-lists'>
-                            {project.goals.map(htmlListItemGenerator)}
-                        </dl>
-                        <h2>Process</h2>
-                        <ol className='modal-lists'>
-                            {project.process.map(htmlListItemGenerator)}
-                        </ol>
-                        <h2>Results</h2>
-                        <p>{project.results}</p>
-                        <h2>Challanges</h2>
-                        <dl className='modal-lists'>
-                            {project.challanges.map(htmlListItemGenerator)}
-                        </dl>
-                        <h2>Takeaways</h2>
-                        <dl className='modal-lists'>
-                            {project.takeaways.map(htmlListItemGenerator)}
-                        </dl>
-                        <h2>Source Code</h2>
-                        <span>Github link: </span>
-                        <a href={project.github}>{project.github}</a>
-                    </div>
-                </div> :
-                <div className="project-card">
-                    <div className="project-card-image">
-                        <img className='images' src={project.thumbnail} alt="" />
-                    </div>
-                    <div className="project-card-text">
-                        <div>
-                            <h3 className='project-name'>{project.name}</h3>
-                            <p className='project-discription'>{project.discription}</p>
-                        </div>
-                        <div>
-                            <p className='project-tech-stack'>Technology: {project.techStack}</p>
-                            <span className='learn-more'>
-                                <span className='learn-more-text'>Learn more about the project </span>
-                                <span className='learn-more-arrow'></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
                 }
             </motion.div>
         </motion.div>

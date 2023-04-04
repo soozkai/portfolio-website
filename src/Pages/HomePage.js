@@ -36,7 +36,7 @@ const Homepage = () => {
                         value: "#fffff",
                     },
                 },
-                fpsLimit: 120,
+                fpsLimit: 60,
                 interactivity: {
                     events: {
                         onClick: {
@@ -86,7 +86,7 @@ const Homepage = () => {
                     number: {
                         density: {
                             enable: true,
-                            area: 1000,
+                            area: 1200,
                         },
                         value: 60,
                     },
