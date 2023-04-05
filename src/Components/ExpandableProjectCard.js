@@ -1,17 +1,9 @@
-import { motion, transform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 
 const ExpandableProjectCard = ({ project }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isHover, setIsHover] = useState(false);
-
-    const handleMouseEnter = () => {
-        setIsHover(true);
-    };
-    const handleMouseLeave = () => {
-        setIsHover(false);
-    };
 
     const handleClick = (e)=>{
         if(e.target.id === 'close' || e.target.className==="backdrop"){
@@ -41,18 +33,19 @@ const ExpandableProjectCard = ({ project }) => {
         hidden:{},
         show:{
             transition:{
+                delay: 1,
                 staggerChildren: 0.1,
             }
         }
     }
 
     const modalTextChildrenVariants = {
-        hidden: { opacity: 0, y: 10 },
-        show: { 
+        hidden: { opacity: 0, y: 80 },
+        show: {
             opacity: 1, 
             y: 0, 
             transition:{
-                type: "tween"
+                // type: "tween"
             }
         },
     }
@@ -89,14 +82,14 @@ const ExpandableProjectCard = ({ project }) => {
                     borderRadius: '10px'
                 }}
                 layout
-                transition={{ duration: 1, type: 'spring'  }}
+                transition={{ duration: 0.5, type: 'spring' }}
             >
                 {isOpen ?
                     <motion.div className= 'modal'>
                         <motion.div
                             initial = {{ opacity: 0 }}
                             animate = {{ opacity: 1 }}
-                            transition={{ duration: 0.1, delay: 0.5}}
+                            transition={{ delay: 0.2 , duration: 0.1 , when:"beforeChildren"}}
                         >
                             <div className="modal-topbar">
                                 <IoIosArrowBack id="close" style={{ fontSize:'25px', cursor: "pointer" }} />
@@ -148,8 +141,6 @@ const ExpandableProjectCard = ({ project }) => {
                             transition = {{ duration: 0.2 }}
                             whileHover = {{ scale: 1.1, y: -10 }}
                             whileTap={{ scale: 0.8 }}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
                         >
                             <div className="project-card-image">
                                 <img className='images' src={project.thumbnail} alt="" />
