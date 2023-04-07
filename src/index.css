@@ -127,17 +127,54 @@ h2{
   display: flex;
 }
 
-.direction{
-  padding: 15px 10px;
+.menu-item{
+  margin: 1rem 1.5rem;
   font-size: 16px;
-  font-style: italic;
-  background-color: transparent;
+  font-weight: 700;
   cursor: pointer;
-  align-self: center;
+  position: relative;
 }
 
-.direction:hover{
-  background-color: #091E4208;
+.underline {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 15px; 
+  background:  #edcf2e;
+  opacity: 0.85;
+}
+
+.nav-menu-icon {
+  display: block;
+  width: 2em;
+  height: 2em;
+  margin: 0.75rem 1.5rem;
+  position: relative;
+  z-index: 1001;
+}
+
+.nav-menu-backdrop {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.white-text{
+  color: #FFFFFF;
+  fill:#FFFFFF;
 }
 
 .home {
@@ -222,6 +259,7 @@ h2{
   min-height: 100vh;
   width: 90%;
   margin: auto;
+  padding-top: 2rem;
   display: flex;
 }
 
@@ -247,7 +285,8 @@ h2{
 .background-container {
   width: fit-content;
   margin: auto;
-  margin-bottom: 100px;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
   font-size: 22px;
   background: #FFFFFF;
   position: relative;
@@ -267,7 +306,7 @@ h2{
 }
 
 .working-experience-container {
-  margin-top: 2em;
+  margin-top: 4em;
   margin-bottom: 5em;
 }
 
@@ -296,7 +335,7 @@ h2{
 }
 
 .skills-grid-container {
-  margin: 80px auto;
+  margin: 2rem auto;
   width: 80%;
   min-width: 300px;
   display: grid;
@@ -423,11 +462,6 @@ h2{
   100% {
     opacity: 0.2;
   }
-}
-
-.backdrop {
-  position: relative;
-  z-index: 99;
 }
 
 .modal{

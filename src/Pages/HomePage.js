@@ -8,9 +8,17 @@ import Footer from '../Components/Footer';
 import WorkExp from '../Components/WorkExp';
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
+import items from '../Data/NavigationChoices';
 
 const Homepage = () => {
+    const AboutRef = useRef(null);
+    const ExpRef = useRef(null);
+    const SkillRef = useRef(null);
+    const ProjectRef = useRef(null);
+    const ContactRef = useRef(null);
+    const Refs = [AboutRef, ExpRef, SkillRef, ProjectRef, ContactRef];
+
     const particlesInit = useCallback(async engine => {
         console.log(engine);
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -25,7 +33,7 @@ const Homepage = () => {
 
     return (  
         <div className="home-page">
-            <Navbar />
+            <Navbar items={items} refs={Refs} />
             <Particles
             id="tsparticles"
             init={particlesInit}
@@ -106,11 +114,11 @@ const Homepage = () => {
             }}
         />
             <Hero />
-            <About />
-            <WorkExp />
-            <Skills />
-            <Project />
-            <Contact />
+            <About reference={AboutRef} />
+            <WorkExp reference={ExpRef} />
+            <Skills reference={SkillRef} />
+            <Project reference={ProjectRef} />
+            <Contact reference={ContactRef} />
             <Footer />
         </div>
     );

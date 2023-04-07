@@ -44,15 +44,12 @@ const ExpandableProjectCard = ({ project }) => {
         show: {
             opacity: 1, 
             y: 0, 
-            transition:{
-                // type: "tween"
-            }
         },
     }
 
     return (
         <motion.div
-            className="backdrop"
+            className='backdrop'
             onClick={(e)=>handleClick(e)}
             style={isOpen && {
                 zIndex: 1000,

@@ -25,12 +25,12 @@ const skillVariants = {
     }
 }
 
-const Skills = () => {
+const Skills = ({reference}) => {
     const skillsRef = useRef(null);
     const isInView = useInView(skillsRef);
 
     return ( 
-        <div className="section" id="skills">
+        <div className="section" id="skills" ref={reference}>
             <div className="section-container">
                 <FadeIn>
                     <h2>Familiar Techs and Tools</h2>

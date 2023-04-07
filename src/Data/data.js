@@ -7,7 +7,6 @@ import framer_motion from './Picture/Icon/framer-motion-logo.com.svg';
 import expressjs from './Picture/Icon/expressjs-icon.svg';
 import vscode from './Picture/Icon/vscode.svg'
 import git from './Picture/Icon/github-mark.svg';
-
 import {MdWork, MdWorkHistory} from 'react-icons/md';
 
 

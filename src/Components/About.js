@@ -25,12 +25,13 @@ const aboutContent ={
     }
 }
 
-const About = () => {
+const About = ({reference}) => {
+    const testRef = useRef('about-me')
     const aboutRef = useRef(null);
     const isInView = useInView(aboutRef, { amount:"all" });
 
     return ( 
-        <div className="section" id="about">
+        <div className="section" id="about" ref={reference}>
             <div className="section-container">
                 <motion.div 
                     className="about-me"

@@ -1,7 +1,7 @@
 import {RiMailLine, RiGithubLine, RiLinkedinLine} from 'react-icons/ri';
 import { useState, useEffect } from 'react';
 
-const Contact = () => {
+const Contact = ({reference}) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -14,7 +14,7 @@ const Contact = () => {
         };
     });
     
-    const iconStyle = (windowWidth > 425) ? {
+    const iconStyle = (windowWidth > 500) ? {
         'width':'30px',
         'height':'30px',
         'padding':'10px',
@@ -33,7 +33,7 @@ const Contact = () => {
     }
 
     return (  
-        <div className="contact-section" id="contact">
+        <div className="contact-section" id="contact" ref={reference}>
             <div className="contact-section-container">
                 <div className="contact-container">
                     <h1>Let's Connnect !</h1>

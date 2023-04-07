@@ -3,9 +3,9 @@ import 'react-vertical-timeline-component/style.min.css';
 import data from '../Data/data'
 import FadeIn from './FramerMotion/FadeIn';
 
-const WorkExp = () => {
+const WorkExp = ({reference}) => {
     return (
-        <div className="section" id="work-experience">
+        <div className="section" id="work-experience" ref={reference}>
             <div className="section-container">
                 <FadeIn>
                     <h2>Working Experience</h2>

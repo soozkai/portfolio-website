@@ -2,9 +2,9 @@ import data from '../Data/data'
 import FadeIn from './FramerMotion/FadeIn';
 import ProjectCard from './ExpandableProjectCard';
 
-const Project = () => {
+const Project = ({reference}) => {
     return (
-        <div className="project-section" id="projects">
+        <div className="project-section" id="projects" ref={reference}>
             <div className="section-container">
                 <FadeIn><h2>My Projects</h2></FadeIn>
                 <div className="projects-container">
