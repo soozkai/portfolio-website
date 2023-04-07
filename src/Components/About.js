@@ -1,4 +1,3 @@
-import FloatAnimation from "./FramerMotion/FloatAnimation";
 import FadeIn from "./FramerMotion/FadeIn";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -26,7 +25,6 @@ const aboutContent ={
 }
 
 const About = ({reference}) => {
-    const testRef = useRef('about-me')
     const aboutRef = useRef(null);
     const isInView = useInView(aboutRef, { amount:"all" });
 
@@ -38,7 +36,6 @@ const About = ({reference}) => {
                     ref={aboutRef}
                     variants={aboutContainer}
                     initial="hidden"
-                    // animate={ isInView ? "visible" : "hidden" }
                     animate={isInView && "visible"}
                 >
                     <motion.h2 variants={aboutContent}>
