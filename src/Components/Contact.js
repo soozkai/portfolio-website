@@ -1,4 +1,5 @@
-import {RiMailLine, RiGithubLine, RiLinkedinLine} from 'react-icons/ri';
+import { RiMailLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri';
+import { HiDownload } from 'react-icons/hi';
 import { useState, useEffect } from 'react';
 
 const Contact = ({reference}) => {
@@ -36,9 +37,14 @@ const Contact = ({reference}) => {
         <div className="contact-section" id="contact" ref={reference}>
             <div className="contact-section-container">
                 <div className="contact-container">
-                    <h1>Let's Connnect !</h1>
+                    <div>
+                        <p className='contact-text'>Download My Resume</p>
+                        <a href="../Data/JadenChun_Resume.pdf" download>
+                            <HiDownload style={iconStyle} className='contact-icons'/>
+                        </a>
+                    </div>
                     <div className="write-email">
-                        <p className='contact-text'>Write me an email</p>
+                        <p className='contact-text'>Write me an Email</p>
                         <div className="email">
                             <a href="mailto:changherng.jc@gmail.com" >
                                 <RiMailLine style={iconStyle} className='contact-icons'/>

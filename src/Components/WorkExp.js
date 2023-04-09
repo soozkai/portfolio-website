@@ -12,7 +12,7 @@ const WorkExp = ({reference}) => {
                 </FadeIn>
                 <div className="working-experience-container">
                     <VerticalTimeline 
-                    lineColor='#0C66E4'
+                    lineColor='#5b7c99'
                     animate={true}
                     >
                         {
@@ -21,9 +21,9 @@ const WorkExp = ({reference}) => {
                                     <VerticalTimelineElement
                                         key={element.id}
                                         date={element.date}
-                                        contentStyle={{ background: '#ffffff' , borderBottom: '3px solid #8BDBE5'}}
+                                        contentStyle={{ background: '#ffffff' , borderBottom: '5px solid #adcad6'}}
                                         contentArrowStyle={{ borderRight: '7px solid  #ffffff' , background: 'none'}}
-                                        iconStyle={{background: '#8BDBE5', boxShadow: 'none', border: '0.25em solid #0C66E4'}}
+                                        iconStyle={{background: '#5b7c99', boxShadow: 'none', border: '0.25em solid #5b7c99'}}
                                         style={{background:'transparent'}}
                                         icon={element.icon}
                                     >

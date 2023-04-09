@@ -63,6 +63,7 @@ const Navbar = ({items, refs}) => {
         }, 1000);
         if(isNavMenuOpen){
             setIsNavMenuOpen(!isNavMenuOpen)
+            document.body.style.overflow = 'auto'
         }
     }
 

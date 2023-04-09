@@ -75,7 +75,6 @@ const ExpandableProjectCard = ({ project }) => {
                     padding:'0',
                     margin:'auto',
                     background:'white',
-                    overflow: 'hidden',
                     borderRadius: '10px'
                 }}
                 layout
@@ -94,7 +93,7 @@ const ExpandableProjectCard = ({ project }) => {
                             <div className="modal-media">
                                 {project.images.map(item=> {
                                     return (
-                                        <img className='images' src={item} alt="" key={project.images.indexOf(item)} />
+                                        <img className='modal-images' src={item} alt="" key={project.images.indexOf(item)} />
                                     )
                                 })}
                             </div>
@@ -113,19 +112,19 @@ const ExpandableProjectCard = ({ project }) => {
                                 <motion.ol className='modal-lists' variants={modalTextChildrenVariants}>
                                     {project.process.map(htmlListItemGenerator)}
                                 </motion.ol>
-                                <motion.h2 variants={modalTextChildrenVariants}>Results</motion.h2>
-                                <motion.p variants={modalTextChildrenVariants}>{project.results}</motion.p>
                                 <motion.h2 variants={modalTextChildrenVariants}>Challanges</motion.h2>
                                 <motion.dl className='modal-lists' variants={modalTextChildrenVariants}>
                                     {project.challanges.map(htmlListItemGenerator)}
                                 </motion.dl>
+                                <motion.h2 variants={modalTextChildrenVariants}>Results</motion.h2>
+                                <motion.p variants={modalTextChildrenVariants}>{project.results}</motion.p>
                                 <motion.h2 variants={modalTextChildrenVariants}>Takeaways</motion.h2>
                                 <motion.dl className='modal-lists' variants={modalTextChildrenVariants}>
                                     {project.takeaways.map(htmlListItemGenerator)}
                                 </motion.dl>
                                 <motion.h2 variants={modalTextChildrenVariants}>Source Code</motion.h2>
                                 <motion.span variants={modalTextChildrenVariants}>Github link: </motion.span>
-                                <motion.a href={project.github} variants={modalTextChildrenVariants}>{project.github}</motion.a>
+                                <motion.a href={project.github} variants={modalTextChildrenVariants} rel="noopener noreferrer" target="_blank" >{project.github}</motion.a>
                             </motion.div>
                         </motion.div>
                     </motion.div> 
@@ -140,7 +139,7 @@ const ExpandableProjectCard = ({ project }) => {
                             whileTap={{ scale: 0.8 }}
                         >
                             <div className="project-card-image">
-                                <img className='images' src={project.thumbnail} alt="" />
+                                <motion.img className='images' initial = {{ opacity: 0 }} animate = {{ opacity: 1 }} transition={{ delay: 0.2 }} src={project.thumbnail} alt="" />
                             </div>
                             <motion.div 
                                 className="project-card-text"
