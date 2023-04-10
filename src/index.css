@@ -444,16 +444,18 @@ h2{
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg); 
 }
+@media screen and (min-width: 768px){
+  .project-card:hover .learn-more-text{
+    font-weight: 400;
+    text-decoration: underline;
+    animation: learnMoreAnimation 1.5s infinite;
+  }
 
-.project-card:hover .learn-more-text{
-  font-weight: 400;
-  text-decoration: underline;
-  animation: learnMoreAnimation 1.5s infinite;
+  .project-card:hover .learn-more-arrow{
+    animation: learnMoreAnimation 1.5s infinite;
+  }
 }
 
-.project-card:hover .learn-more-arrow{
-  animation: learnMoreAnimation 1.5s infinite;
-}
 
 @keyframes learnMoreAnimation {
   0% {
