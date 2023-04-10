@@ -1,6 +1,7 @@
 import { RiMailLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri';
 import { HiDownload } from 'react-icons/hi';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Contact = ({reference}) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -39,9 +40,9 @@ const Contact = ({reference}) => {
                 <div className="contact-container">
                     <div>
                         <p className='contact-text'>Download My Resume</p>
-                        <a href="../Data/JadenChun's Resume.pdf" download>
+                        <Link to="/JadenChun's Resume.pdf" target="_blank" download>
                             <HiDownload style={iconStyle} className='contact-icons'/>
-                        </a>
+                        </Link>
                     </div>
                     <div className="write-email">
                         <p className='contact-text'>Write me an Email</p>
