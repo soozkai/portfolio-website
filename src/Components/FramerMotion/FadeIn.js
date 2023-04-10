@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 
 const FadeIn = ({children}) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, {  amount:"all" });
+    const isInView = useInView(ref, { once: true, amount:"all" });
 
     return (
         <motion.div
