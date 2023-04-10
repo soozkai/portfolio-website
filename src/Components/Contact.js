@@ -39,7 +39,7 @@ const Contact = ({reference}) => {
                 <div className="contact-container">
                     <div>
                         <p className='contact-text'>Download My Resume</p>
-                        <a href="../Data/JadenChun_Resume.pdf" download>
+                        <a href="../Data/JadenChun's Resume.pdf" download>
                             <HiDownload style={iconStyle} className='contact-icons'/>
                         </a>
                     </div>
