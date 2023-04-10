@@ -25,8 +25,8 @@ const Contact = ({reference}) => {
         'margin':'0 5px',
         'fill':'#FFFFFF'
     }:{
-        'width':'20px',
-        'height':'20px',
+        'width':'30px',
+        'height':'30px',
         'padding':'6px',
         'border': '2px solid #FFFFFF',
         'borderRadius': '50%',
