@@ -21,7 +21,7 @@ import portfolioProject from './Picture/Projects/portfolio project.png'
 import portfolioContact from './Picture/Projects/portfolio contact.png'
 
 let aboutMe = {
-    aboutMe_1: 'Hello and welcome to my website! My name is Jaden, and I am a passionate software developer with a strong desire to make a positive impact on the world through my work. I embarked on my journey to become a software engineer when I enrolled in the software engineering degree program at Asia Pacific University (APU). Since then, my fascination with software development has made me a curious person who is always eager to find solutions.',
+    aboutMe_1: 'Hello and welcome to my website! My name is Jaden, and I am a passionate software developer with a strong desire to make a positive impact on the world through my work. I embarked on my journey to become a software engineer when I enrolled in the software engineering degree program at Asia Pacific University of Technology & Innovation (APU). Since then, my fascination with software development has made me a curious person who is always eager to find solutions.',
     aboutMe_2: 'For me, challenges are opportunities for growth. I love learning new technologies and applying them to create software solutions that can help people. This is what motivates me to continually improve my skills. While working on a few solo projects, I realized the importance of being a good team player in the software development industry. Therefore, I am dedicated to working with a talented team to deliver great software.',
     aboutMe_3: 'Thank you for taking the time to read about me, and I look forward to connecting with you!'
 }
@@ -97,11 +97,11 @@ let projects = [
         video:[],
         images:[subgenHome, subgenSetting, subgenTranslate],
         overview: 'SubGen is a real-time caption generator that aims to provide real-time captioning for any windows-based application. The application utilizes Microsoft Azure speech services and features a simple graphical user interface (GUI). SubGen is capable of generating both translated and non-translated captions.',
-        goals: ['Generate caption with speech transcription in least delay possible.','Generate caption\'s translation in least delay possible.'],
-        process: ['Testing idea feasibility by creating a prototype with command-line interface (CLI).', 'Design and create GUI for the prototype.','Testing the application with the GUI.','Compile, prepare, and distribute SubGen.'],
-        results: 'At the end of the day, SubGen is capable of generating captions with speech transcription in the shortest possible time. ',
-        challanges: ['Dealing with the audio processing in Windows.', 'Creating a pipeline to stream the audio output towards Azure Speech API'],
-        takeaways: ['Experience in processing PCM audio data.','Experience in developing multi-threading application','Exprience in windwos application development with Qt framework in C++',],
+        goals: ['To generate captions with speech transcription in the shortest possible time.','To generate translations of captions with the shortest possible delay.'],
+        process: ['Create a prototype with command-line interface (CLI) to test the feasibility of the idea.', 'Design and create GUI for the prototype.','Test and debug the application with the GUI manually.','Compile, prepare, and distribute SubGen.'],
+        results: 'All goals were achieved, SubGen is capable of generating dual-language captions shortly after recognizing speech.',
+        challanges: ['Addressing audio data from the system\'s output.', 'Creating a pipeline to stream audio output towards Azure Speech API.'],
+        takeaways: ['Gained experience in processing PCM audio data.','Developed skills in multi-threading application development.','Gained experience in windows application development with Qt framework in C++.',],
         github: 'https://github.com/JadenChun/real-time-caption-generator',
     },{
         id:2,
@@ -112,11 +112,11 @@ let projects = [
         video:[],
         images:[portfolioHero, portfolioAbout, portfolioExp, portfolioSkill, portfolioProject, portfolioContact],
         overview: 'This is a personal portfolio website designed to introduce the my background, skills, and works. It is designed to have a clean and beautiful layout and provide a smooth user experience. I am also planing to use it as a platform for recording my career and personal achievements. As such, the website will be updated continuously to reflect my growth and progress in my career and life.',
-        goals: ['Introduce myself with a clean and beautiful design','Smooth user experience when browsing the website.'],
-        process: ['Design and create the layout for the content.','Completing the content for my portfolio', 'Adding animation to the component.',],
-        results: 'Successfully developed a personal portfolio website with an attractive design and efficient user experience.',
+        goals: ['To introduce myself with a clean and beautiful design.','Provide smooth user experience for the visitor.'],
+        process: ['Design and create the layout for the content.','Completing the content for my portfolio.', 'Adding animation to the component.','Test the result manually.','Deploy to AWS Amplify.'],
+        results: 'A responsive website is being developed to showcase my skills and serve as a platform for recording my personal achievements',
         challanges: ['Require to learn along the development as I\'m new to the animation sector of web development before this.','Explore and learn more about the backend knowledge of a web application such as hosting, monitoring, and maintenance.'],
-        takeaways: ['Experience in full development process for a web application', 'Experience in AWS cloud for hosting and monitoring web application', 'Experience in morden web teachnology such as React, Framer Motion, and Express.js',],
+        takeaways: ['Gained experience in full stack development process for a web application.', 'Gained experience in AWS Amplify for hosting and monitoring web application.', 'Gained experience in morden web teachnology such as React and Framer Motion.',],
         github: 'https://github.com/JadenChun/portfolio-website',
     },{
         id:3,
@@ -127,11 +127,11 @@ let projects = [
         video:[],
         images:[memoHomePage, memoEdit, memoHomePageWithData],
         overview: 'This project is a memo Android application developed using Dart and Flutter. It allows users to save, edit, and delete notes, and stores the data locally on the device. The main purpose of the project is to learn and gain experience in mobile application development using these technologies.',
-        goals: ['Develop an Android memo application with save, edit, and delete functions.','Store data locally on the device.'],
+        goals: ['Develop an Android memo application with save, edit, and delete functions.','To store data locally on the device.'],
         process: ['Design and Create both user interface and functionality for the home page.','Design and create functionality for the memo page.'],
-        results: 'The result application was successful in providing the save, edit, and delete features for text data.',
-        challanges: ['Self-learning Dart and Flutter.','Create desire behaviour with an unfamiliar framework and language.'],
-        takeaways: ['Improve self-learning and problem solving skills','Gained experience with Dart and Flutter for Android application development'],
+        results: 'The application was successful in providing the save, edit, and delete features for text data.',
+        challanges: ['Self-learning Dart and Flutter.','Implementing desire behaviour with an unfamiliar framework and language.'],
+        takeaways: ['Improved self-learning and problem solving skills','Gained experience with Dart and Flutter for Android application development'],
         github: 'https://github.com/JadenChun/flutter-note-application',
     },
 ]
