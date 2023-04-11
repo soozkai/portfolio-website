@@ -575,8 +575,7 @@ hr {
 }
 
 footer {
-  background-color: #f2f2f2;
-  padding: 5px 0;
+  background-color: darkgray;
   text-align: center;
   z-index: 99;
   position: relative;
