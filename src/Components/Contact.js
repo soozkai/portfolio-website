@@ -1,7 +1,6 @@
 import { RiMailLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri';
 import { HiDownload } from 'react-icons/hi';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const Contact = ({reference}) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -25,13 +24,28 @@ const Contact = ({reference}) => {
         'margin':'0 5px',
         'fill':'#FFFFFF'
     }:{
-        'width':'30px',
-        'height':'30px',
-        'padding':'6px',
+        'width':'28px',
+        'height':'28px',
+        'padding':'10px',
         'border': '2px solid #FFFFFF',
         'borderRadius': '50%',
         'margin':'2px 2px',
         'fill':'#FFFFFF'
+    }
+
+    const downloadResume = ()=>{
+        const Resume_URL = 'JadenChun\'s Resume.pdf';
+        const filename = 'JadenChun\'s Resume.pdf';
+        var link = document.createElement("a"); 
+        link.download = filename;  
+        link.target = "_blank"; 
+        link.href = Resume_URL; 
+        document.body.appendChild(link);  
+        setTimeout(function() { 
+            link.click();  
+            document.body.removeChild(link); 
+            document.getElementById('nextButton').onclick(); 
+        }, 500); 
     }
 
     return (  
@@ -40,9 +54,7 @@ const Contact = ({reference}) => {
                 <div className="contact-container">
                     <div>
                         <p className='contact-text'>Download My Resume</p>
-                        <Link to="/JadenChun's Resume.pdf" target="_blank" download>
-                            <HiDownload style={iconStyle} className='contact-icons'/>
-                        </Link>
+                        <HiDownload style={iconStyle} className='contact-icons' onClick={() => downloadResume()}/>
                     </div>
                     <div className="write-email">
                         <p className='contact-text'>Write me an Email</p>
