@@ -34,7 +34,7 @@ const Contact = ({reference}) => {
     }
 
     const downloadResume = ()=>{
-        const Resume_URL = 'JadenChun\'s Resume.pdf';
+        const Resume_URL = '/JadenChun\'s Resume.pdf';
         const filename = 'JadenChun\'s Resume.pdf';
         var FileSaver = require('file-saver');
         FileSaver.saveAs(Resume_URL, filename);
