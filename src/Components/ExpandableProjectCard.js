@@ -90,7 +90,7 @@ const ExpandableProjectCard = ({ project }) => {
                             transition={{ delay: 0.2 , duration: 0.1 , when:"beforeChildren"}}
                         >
                             <div className="modal-topbar">
-                                <IoIosArrowBack id="close" style={{ fontSize:'25px', cursor: "pointer" }} />
+                                <IoIosArrowBack id="close" style={{ fontSize:'30px', cursor: "pointer" }} />
                             </div>
                             <div className="modal-media">
                                 {project.images.map(item=> {
