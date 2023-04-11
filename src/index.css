@@ -25,6 +25,12 @@ body {
     margin: 3em 0px;
     row-gap: 1.5em;
   }
+  .section-container{
+    margin-top: 3.5em !important;
+  }
+  .project-section{
+    padding-top: 1.5em !important;
+  }
 }
 
 @media screen and (max-width: 820px){
