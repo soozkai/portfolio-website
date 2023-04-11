@@ -55,7 +55,6 @@ const Contact = ({reference}) => {
                                 <RiMailLine style={iconStyle} className='contact-icons'/>
                             </a>
                         </div>
-                        
                     </div>
                     <div className="contact-link">
                         <p className='contact-text'>Social Media</p>

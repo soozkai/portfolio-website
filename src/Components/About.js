@@ -27,7 +27,7 @@ const aboutContent ={
 
 const About = ({reference}) => {
     const aboutRef = useRef(null);
-    const isInView = useInView(aboutRef, { amount:"all" });
+    const isInView = useInView(aboutRef, { amount: 0.5 });
 
     return ( 
         <div className="section" id="about" ref={reference}>
