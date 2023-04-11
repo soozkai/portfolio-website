@@ -37,18 +37,18 @@ const Contact = ({reference}) => {
         const Resume_URL = 'JadenChun\'s Resume.pdf';
         const filename = 'JadenChun\'s Resume.pdf';
         var FileSaver = require('file-saver');
-        
-        fetch( Resume_URL, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/pdf',
-                },
-            })
-            .then((response) => response.blob())
-            .then((blob) => {
-                const fileURL = window.URL.createObjectURL(blob);
-                FileSaver.saveAs(fileURL, filename);
-            });
+        FileSaver.saveAs(Resume_URL, filename);
+        // fetch( Resume_URL, {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-Type': 'application/pdf',
+        //         },
+        //     })
+        //     .then((response) => response.blob())
+        //     .then((blob) => {
+        //         const fileURL = window.URL.createObjectURL(blob);
+        //         FileSaver.saveAs(fileURL, filename);
+        //     });
         // var link = document.createElement("a"); 
         // link.download = filename;  
         // link.target = "_blank"; 
