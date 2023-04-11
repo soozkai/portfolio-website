@@ -68,7 +68,7 @@ const Navbar = ({items, refs}) => {
     }
 
     const navMenuVariants = {
-        hidden: { y: -1000 },
+        hidden: { y: -9000 },
         show: {
             y: 0,
             transition: {

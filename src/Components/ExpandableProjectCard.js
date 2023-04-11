@@ -139,7 +139,7 @@ const ExpandableProjectCard = ({ project }) => {
                             animate = {isInView && { opacity: 1 }}
                             transition = {{ duration: 0.2 }}
                             whileHover = { (window.innerWidth > 820) && { scale: 1.1, y: -10 }}
-                            whileTap={{ scale: 0.8 }}
+                            whileTap={(window.innerWidth > 820) && { scale: 0.9 }}
                         >
                             <div className="project-card-image">
                                 <motion.img className='images' initial = {{ opacity: 0 }} animate = {{ opacity: 1 }} transition={{ delay: 0.2 }} src={project.thumbnail} alt="" />

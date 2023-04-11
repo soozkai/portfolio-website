@@ -391,11 +391,6 @@ h2{
   z-index: 99;
 }
 
-.project-card:hover {
-  cursor: pointer;
-  background: rgb(223, 237, 255);
-}
-
 .project-card-image {
   max-width: 100%;
   min-height: 180px;
@@ -455,18 +450,20 @@ h2{
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg); 
 }
-@media screen and (min-width: 768px){
+@media screen and (min-width: 850px){
+  .project-card:hover {
+    cursor: pointer;
+    background: rgb(223, 237, 255);
+  }
   .project-card:hover .learn-more-text{
     font-weight: 400;
     text-decoration: underline;
     animation: learnMoreAnimation 1.5s infinite;
   }
-
   .project-card:hover .learn-more-arrow{
     animation: learnMoreAnimation 1.5s infinite;
   }
 }
-
 
 @keyframes learnMoreAnimation {
   0% {
