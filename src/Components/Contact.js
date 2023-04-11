@@ -36,31 +36,33 @@ const Contact = ({reference}) => {
     const downloadResume = ()=>{
         const Resume_URL = 'JadenChun\'s Resume.pdf';
         const filename = 'JadenChun\'s Resume.pdf';
-        fetch( Resume_URL, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/pdf',
-                },
-            })
-            .then((response) => response.blob())
-            .then((blob) => {
-                // Create blob link to download
-                const url = window.URL.createObjectURL(
-                new Blob([blob]),
-                );
-                const link = document.createElement('a');
-                link.href = url;
-                link.setAttribute(
-                'download',
-                filename,
-                );
-                // Append to html link element page
-                document.body.appendChild(link);
-                // Start download
-                link.click();
-                // Clean up and remove the link
-                link.parentNode.removeChild(link);
-            });
+        var FileSaver = require('file-saver');
+        FileSaver.saveAs( Resume_URL , filename);
+        // fetch( Resume_URL, {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-Type': 'application/pdf',
+        //         },
+        //     })
+        //     .then((response) => response.blob())
+        //     .then((blob) => {
+        //         // Create blob link to download
+        //         const url = window.URL.createObjectURL(
+        //         new Blob([blob]),
+        //         );
+        //         const link = document.createElement('a');
+        //         link.href = url;
+        //         link.setAttribute(
+        //         'download',
+        //         filename,
+        //         );
+        //         // Append to html link element page
+        //         document.body.appendChild(link);
+        //         // Start download
+        //         link.click();
+        //         // Clean up and remove the link
+        //         link.parentNode.removeChild(link);
+        //     });
         // var link = document.createElement("a"); 
         // link.download = filename;  
         // link.target = "_blank"; 
