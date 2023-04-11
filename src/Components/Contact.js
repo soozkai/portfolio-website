@@ -1,6 +1,7 @@
 import { RiMailLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri';
 import { HiDownload } from 'react-icons/hi';
 import { useState, useEffect } from 'react';
+import { saveAs } from 'file-saver';
 
 const Contact = ({reference}) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -35,9 +36,11 @@ const Contact = ({reference}) => {
 
     const downloadResume = ()=>{
         const Resume_URL = '/JadenChun\'s Resume.pdf';
-        const filename = 'JadenChun\'s Resume.pdf';
-        var FileSaver = require('file-saver');
-        FileSaver.saveAs(Resume_URL, filename);
+        const filename = 'Jaden Chun\'s Resume.pdf';
+        fetch(Resume_URL)
+            .then(response => response.blob())
+            .then(blob => saveAs(blob, filename))
+            .catch(error => console.error(error));
     }
 
     return (  
