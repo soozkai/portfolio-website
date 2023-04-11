@@ -38,27 +38,6 @@ const Contact = ({reference}) => {
         const filename = 'JadenChun\'s Resume.pdf';
         var FileSaver = require('file-saver');
         FileSaver.saveAs(Resume_URL, filename);
-        // fetch( Resume_URL, {
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/pdf',
-        //         },
-        //     })
-        //     .then((response) => response.blob())
-        //     .then((blob) => {
-        //         const fileURL = window.URL.createObjectURL(blob);
-        //         FileSaver.saveAs(fileURL, filename);
-        //     });
-        // var link = document.createElement("a"); 
-        // link.download = filename;  
-        // link.target = "_blank"; 
-        // link.href = Resume_URL; 
-        // document.body.appendChild(link);  
-        // setTimeout(function() { 
-        //     link.click();  
-        //     document.body.removeChild(link); 
-        //     document.getElementById('nextButton').onclick(); 
-        // }, 500); 
     }
 
     return (  
