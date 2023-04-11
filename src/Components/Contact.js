@@ -46,8 +46,8 @@ const Contact = ({reference}) => {
             })
             .then((response) => response.blob())
             .then((blob) => {
-                var blob = new Blob([blob], {type: 'application/pdf'});
-                FileSaver.saveAs(blob, filename);
+                const fileURL = window.URL.createObjectURL(blob);
+                FileSaver.saveAs(fileURL, filename);
             });
         // var link = document.createElement("a"); 
         // link.download = filename;  
