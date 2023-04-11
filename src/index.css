@@ -574,7 +574,7 @@ hr {
 footer {
   background-color: darkgray;
   text-align: center;
-  z-index: 99;
+  z-index: 999;
   position: relative;
 }
 
