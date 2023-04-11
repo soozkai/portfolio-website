@@ -23,7 +23,8 @@ const Contact = ({reference}) => {
         'border': '3px solid #FFFFFF',
         'borderRadius': '50%',
         'margin':'0 5px',
-        'fill':'#FFFFFF'
+        'fill':'#FFFFFF',
+        'cursor':'pointer'
     }:{
         'width':'28px',
         'height':'28px',
@@ -31,7 +32,8 @@ const Contact = ({reference}) => {
         'border': '2px solid #FFFFFF',
         'borderRadius': '50%',
         'margin':'2px 2px',
-        'fill':'#FFFFFF'
+        'fill':'#FFFFFF',
+        'cursor':'pointer'
     }
 
     const downloadResume = ()=>{
