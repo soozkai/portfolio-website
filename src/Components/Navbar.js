@@ -68,13 +68,14 @@ const Navbar = ({items, refs}) => {
     }
 
     const navMenuVariants = {
-        hidden: { y: -1000 },
+        hidden: { y: -3000 },
         show: {
             y: 0,
             transition: {
+                type:'tween',
                 duration: 0.2,
                 when:"beforeChildren",
-                staggerChildren: 0.1
+                staggerChildren: 0.1,
             }
         }
     }
