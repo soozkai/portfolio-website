@@ -5,7 +5,7 @@ import { IoIosArrowBack } from "react-icons/io";
 const ExpandableProjectCard = ({ project }) => {
     const [isOpen, setIsOpen] = useState(false);
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 'all' });
+    const isInView = useInView(ref, { once: true, amount: 'some' });
 
     const handleClick = (e)=>{
         if(e.target.id === 'close' || e.target.className==="backdrop"){
@@ -90,7 +90,7 @@ const ExpandableProjectCard = ({ project }) => {
                             transition={{ delay: 0.2 , duration: 0.1 , when:"beforeChildren"}}
                         >
                             <div className="modal-topbar">
-                                <IoIosArrowBack id="close" style={{ fontSize:'25px', cursor: "pointer" }} />
+                                <IoIosArrowBack id="close" style={{ fontSize:'30px', cursor: "pointer" }} />
                             </div>
                             <div className="modal-media">
                                 {project.images.map(item=> {
@@ -138,7 +138,7 @@ const ExpandableProjectCard = ({ project }) => {
                             initial = {{ opacity: 0 }}
                             animate = {isInView && { opacity: 1 }}
                             transition = {{ duration: 0.2 }}
-                            whileHover = {{ scale: 1.1, y: -10 }}
+                            whileHover = { (window.innerWidth > 820) && { scale: 1.1, y: -10 }}
                             whileTap={{ scale: 0.8 }}
                         >
                             <div className="project-card-image">

@@ -1,7 +1,7 @@
 import { RiMailLine, RiGithubLine, RiLinkedinLine } from 'react-icons/ri';
 import { HiDownload } from 'react-icons/hi';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { saveAs } from 'file-saver';
 
 const Contact = ({reference}) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -23,15 +23,26 @@ const Contact = ({reference}) => {
         'border': '3px solid #FFFFFF',
         'borderRadius': '50%',
         'margin':'0 5px',
-        'fill':'#FFFFFF'
+        'fill':'#FFFFFF',
+        'cursor':'pointer'
     }:{
-        'width':'20px',
-        'height':'20px',
-        'padding':'6px',
+        'width':'28px',
+        'height':'28px',
+        'padding':'10px',
         'border': '2px solid #FFFFFF',
         'borderRadius': '50%',
         'margin':'2px 2px',
-        'fill':'#FFFFFF'
+        'fill':'#FFFFFF',
+        'cursor':'pointer'
+    }
+
+    const downloadResume = ()=>{
+        const Resume_URL = 'Resume.pdf';
+        const filename = 'Jaden Chun\'s Resume.pdf';
+        fetch(Resume_URL)
+            .then(response => response.blob())
+            .then(blob => saveAs(blob, filename))
+            .catch(error => console.error(error));
     }
 
     return (  
@@ -40,9 +51,7 @@ const Contact = ({reference}) => {
                 <div className="contact-container">
                     <div>
                         <p className='contact-text'>Download My Resume</p>
-                        <Link to="/JadenChun's Resume.pdf" target="_blank" download>
-                            <HiDownload style={iconStyle} className='contact-icons'/>
-                        </Link>
+                        <HiDownload style={iconStyle} className='contact-icons' onClick={() => downloadResume()}/>
                     </div>
                     <div className="write-email">
                         <p className='contact-text'>Write me an Email</p>
@@ -51,7 +60,6 @@ const Contact = ({reference}) => {
                                 <RiMailLine style={iconStyle} className='contact-icons'/>
                             </a>
                         </div>
-                        
                     </div>
                     <div className="contact-link">
                         <p className='contact-text'>Social Media</p>
