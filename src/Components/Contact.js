@@ -35,7 +35,7 @@ const Contact = ({reference}) => {
     }
 
     const downloadResume = ()=>{
-        const Resume_URL = '/JadenChun\'s_Resume.pdf';
+        const Resume_URL = 'Resume.pdf';
         const filename = 'Jaden Chun\'s Resume.pdf';
         fetch(Resume_URL)
             .then(response => response.blob())
