@@ -1,6 +1,8 @@
-live at: www.jadenchun.dev
+## Portfolio Website
 
-# Getting Started with Create React App
+View live at: www.jadenchun.dev
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
