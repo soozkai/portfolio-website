@@ -14,11 +14,16 @@ body {
   .about-me p{
     text-align: justify;
   }
+  .modal-text p{
+    text-align: left;
+  }
   .contact-container p{
     font-size: 16px !important;
   }
-  .modal-text p{
-    text-align: left;
+  .contact-container {
+    grid-template-columns: auto !important;
+    margin: 3em 0px;
+    row-gap: 1.5em;
   }
 }
 
