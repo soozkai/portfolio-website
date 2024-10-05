@@ -55,6 +55,9 @@ body {
   .background h4{
     font-size: 14px !important;
   }
+  .skill-details h4{
+    font-size: 14px !important;
+  }
   .vertical-timeline-element-content h3{
     font-size: 20px;
   }
@@ -311,6 +314,7 @@ h2{
   width: 50vw;
   min-width: 300px;
   margin-top: 5%;
+  margin-bottom: 3%;
   font-size: 20px;
 }
 
@@ -343,18 +347,27 @@ h2{
   text-align: center !important;
 }
 
+.skill-details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 30vh;
+  min-width: 300px;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  font-size: 20px;
+}
+
 .skills-grid-container {
-  margin: 2rem auto;
-  width: 80%;
+  margin-top: 1vh;
   min-width: 300px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   font-size: 24px;
 }
 
 .skill-block {
-  margin: 30px 40px;
-  padding: 30px 10px;
+  margin: 20px 20px;
+  padding: 20px 10px;
   position: relative;
   z-index: 99;
 }
