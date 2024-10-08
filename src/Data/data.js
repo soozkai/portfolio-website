@@ -64,10 +64,11 @@ let timelineElements = [
     discriptions: [
       "Developed and maintained IOS and Android app, including POS system and Chat management app.",
       "Improved POS system reliability by implementing offline-first concept with sqflite local databse.",
+      "Designed a chat management app using the MVVM architecture to address complex business logic.",
+      "Developed backend functions with NodeJS to support the chat management app.",
       "Developed customer service chatbot leveraging Retrieval-Augmented Generation (RAG) technique with LangChain and LangGraph in Python",
-      "Developed backend functions with NodeJS to supports the chat management app.",
     ],
-    date: "June 2023 - Current",
+    date: "June 2023 - Present",
     icon: <IoMdCodeWorking style={{ fill: "#FFFFFF" }} />,
   },
 ];
