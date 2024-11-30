@@ -4,7 +4,7 @@ function Footer() {
 
     return (
         <footer>
-            <p>&copy;{year} Jaden Chun.</p>
+            <p>&copy;{year} Austin Soo.</p>
         </footer>
     );
 }

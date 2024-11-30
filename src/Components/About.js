@@ -49,16 +49,15 @@ const About = ({ reference }) => {
             <h3>Learn me at a glance</h3>
             <div className="background">
               <h4>Location</h4>
-              <p>Kuala Lumpur, open for remote work</p>
+              <p>Brisbane, QLD</p>
               <h4>Education</h4>
               <p>
-                Software Engineering Degree from Asia Pacific University{" "}
+                Y3 Computer Science Degree from Queensland University of Technology{" "}
                 {"(APU)"}
               </p>
               <h4>Tech Experiences</h4>
               <p>
-                Flutter Development, LLM(Large Language Model) implementation,
-                and Web Development
+                React, Node.js, Express.js, MySQL, MongoDB, AWS, Docker, Android APK Integration, Git, Power BI, Vue
               </p>
               {/* <h4>IT Interests</h4>
               <p>

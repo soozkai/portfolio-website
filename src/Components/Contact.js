@@ -38,7 +38,7 @@ const Contact = ({reference}) => {
 
     const downloadResume = ()=>{
         const Resume_URL = 'Resume.pdf';
-        const filename = 'Jaden Chun\'s Resume.pdf';
+        const filename = 'Austin\'s Resume.pdf';
         fetch(Resume_URL)
             .then(response => response.blob())
             .then(blob => saveAs(blob, filename))
@@ -56,7 +56,7 @@ const Contact = ({reference}) => {
                     <div className="write-email">
                         <p className='contact-text'>Write me an Email</p>
                         <div className="email">
-                            <a href="mailto:changherng.jc@gmail.com" >
+                            <a href="mailto:soozkai@gmail.com" >
                                 <RiMailLine style={iconStyle} className='contact-icons'/>
                             </a>
                         </div>
@@ -64,7 +64,7 @@ const Contact = ({reference}) => {
                     <div className="contact-link">
                         <p className='contact-text'>Social Media</p>
                         <div className="social-media-icons">
-                            <a href="https://github.com/JadenChun" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/soozkai" target="_blank" rel="noopener noreferrer">
                                 <RiGithubLine style={iconStyle} className='contact-icons'/>
                             </a>
                             <a href="https://www.linkedin.com/in/jaden-chun-287392182/" target="_blank" rel="noopener noreferrer">

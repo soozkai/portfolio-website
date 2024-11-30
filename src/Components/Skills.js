@@ -68,18 +68,16 @@ const Skills = ({ reference }) => {
     <Box sx={{ width: "90%", height: 596, margin: "auto" }}>
       <div className="background-container">
         <div className="skill-details">
-          <h4>Flutter</h4>
+          <h4>JavaScript Frameworks & Libraries</h4>
           <p>
-            platform channel, work manager, provider, riverpod, bloc, sqflite,
-            shared preference, localization, http
+            React, Node.js, Express.js, Next.js, Redux, Material-UI, TailwindCSS
           </p>
           <h4>Tools & Services</h4>
           <p>
-            Figma, DhiWise, Github, Android studio, Xcode, Firebase, Google
-            Cloud Platform
+             GitHub, Visual Studio Code, Postman, Firebase, AWS, Docker
           </p>
-          <h4>Programing languages</h4>
-          <p>Flutter/Dart, Java, Javascript, Python, HTML/CSS, PHP, C++</p>
+          <h4>Programming Languages</h4>
+          <p>JavaScript, HTML/CSS, Python, C#</p>
         </div>
       </div>
     </Box>
