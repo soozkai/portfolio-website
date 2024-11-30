@@ -118,7 +118,7 @@ let projects = [
     description:
     "A centralized platform for hotel administrators to manage and configure content displayed on in-room Android TV servers.",
     techStack: "React, Node.js, Express.js, MySQL, RabbitMQ",
-    thumbnail: gdmedia,
+    thumbnail: gdlogin,
     video: [],
     images: [gdlogin, gdmedia, gdtv, gderror],
     overview:
