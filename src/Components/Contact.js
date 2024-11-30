@@ -67,7 +67,7 @@ const Contact = ({reference}) => {
                             <a href="https://github.com/soozkai" target="_blank" rel="noopener noreferrer">
                                 <RiGithubLine style={iconStyle} className='contact-icons'/>
                             </a>
-                            <a href="https://www.linkedin.com/in/jaden-chun-287392182/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/zheng-kai-soo-556745237/" target="_blank" rel="noopener noreferrer">
                                 <RiLinkedinLine style={iconStyle} className='contact-icons'/>
                             </a>
                         </div>
