@@ -1,6 +1,6 @@
 ## Portfolio Website
 
-View live at: www.jadenchun.dev
+View live at: www.austinsoo.me
 
 ## Getting Started with Create React App
 
