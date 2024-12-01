@@ -175,7 +175,7 @@ let projects = [
         "Enhanced knowledge of modern web development frameworks.",
         "Improved deployment and hosting skills with AWS.",
       ],
-      github: "https://github.com/yourusername/portfolio-website",
+      github: "https://github.com/soozkai/portfolio-website",
     },
     {
       id: 3,
